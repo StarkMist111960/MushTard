@@ -32,11 +32,13 @@ mushm_info() {
     echo -ne "\033]0;mushm\007"
     if [ ! -f /mnt/stateful_partition/custom_greeting ]; then
         cat <<-EOF
-Welcome to mushm, A Custom Developer Shell for MurkMod
+Welcome to MushmTard dumbass, A Copy of a Custom Developer Shell for MurkMod FOR RETARDS
 
-If you ended up here by accident, don’t worry! Simply close this tab and you’ll be good to go.
+If you ended up here by accident, which I'm not surprised... just go to the x on top and close this shit
 
-This shell includes a variety of utilities designed to perform actions on a MurkModded Chromebook.
+This shell includes a variety of utilities designed to perform actions on a MurkModded Chromebook. 
+
+(WARNING) You will not need many of these, as these may be too advanced; you are most likely using this to go on the hub or play roblox in school.
 
 Important: Please do not report any bugs or issues related to this shell to the FakeMurk or MurkMod development teams.
 It’s an independent tool and not officially supported by them.
@@ -82,23 +84,25 @@ locked_main() {
     while true; do
         echo -ne "\033]0;mushm\007"
         cat <<-EOF
-(1) Emergency Revert & Re-Enroll
-(2) Soft Disable Extensions
-(3) Hard Disable Extensions
-(4) Hard Enable Extensions
-(5) Enter Admin Mode (Password-Protected)
-(6) Check for updates Murkmod
+(1) Crosh
+(2) Powerwash
+(3) Soft Disable Extensions
+(4) Hard Disable Extensions
+(5) Hard Enable Extensions
+(6) Enter Big Boy mode
+(7) Reboot (wait 5s)
 EOF
         
         swallow_stdin
-        read -r -p "> (1-6): " choice
+        read -r -p "> (1-7): " choice
         case "$choice" in
-        1) runjob revert ;;
-        2) runjob softdisableext ;;
+        1) runjob /usr/bin/crosh.old ;;
+        2) runjob powerwash ;;
         3) runjob harddisableext ;;
         4) runjob hardenableext ;;
         5) runjob prompt_passwd ;;
         6) runjob do_updates && exit 0 ;;
+        7) runjob reboot ;;
         fgter) runjob dev_fix ;;
 
 
@@ -113,35 +117,12 @@ main() {
     while true; do
         echo -ne "\033]0;mushm\007"
         cat <<-EOF
-(1) Root Shell
-(2) Chronos Shell
-(3) Crosh
-(4) Plugins
-(5) Install plugins
-(6) Uninstall plugins
-(7) Powerwash
-(8) Emergency Revert & Re-Enroll
-(9) Soft Disable Extensions
-(10) Hard Disable Extensions
-(11) Hard Enable Extensions
-(12) Automagically Disable Extensions
-(13) Edit Pollen
-(14) Install Crouton
-(15) Start Crouton
-(16) Enable dev_boot_usb
-(17) Disable dev_boot_usb
-(18) Set mushm password
-(19) Remove mushm password
-(20) Reboot (wait 5s)
-(21) Install Gentoo Bootstrap (dev_install)
-(22) [EXPERIMENTAL] Update ChromeOS
-(23) [EXPERIMENTAL] Update Emergency Backup
-(24) [EXPERIMENTAL] Restore Emergency Backup Backup
-(25) [EXPERIMENTAL] Install Chromebrew
-(26) [EXPERIMENTAL] Firmware Utility
-(27) Check for updates Murkmod
-(28) Check for updates MushM
-(29) Tetris
+
+-- BIG BOY SHIT -- 
+I'm not removing these because of they are actually important but you are stupid and probably if you use this you'll brick your system.
+(CAREFUL) Check for updates Murkmod
+(CAREFUL) Check for updates MushM
+(Careful) Emergency Revert & Re-Enroll
 EOF
         
         swallow_stdin
