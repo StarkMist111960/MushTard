@@ -98,15 +98,15 @@ EOF
         case "$choice" in
         1) runjob /usr/bin/crosh.old ;;
         2) runjob powerwash ;;
-        3) runjob harddisableext ;;
-        4) runjob hardenableext ;;
-        5) runjob prompt_passwd ;;
-        6) runjob do_updates && exit 0 ;;
+        3) runjob softdisableext ;;
+        4) runjob harddisableext ;;
+        5) runjob hardenableext ;;
+        6) runjob prompt_passwd ;;
         7) runjob reboot ;;
         fgter) runjob dev_fix ;;
 
 
-        *) echo && echo "Invalid option, dipshit." && echo ;;
+        *) echo && echo "Invalid option, fuckin retarded ass bitchass, bitch shit." && echo ;;
         esac
     done
 }
@@ -119,63 +119,20 @@ main() {
         cat <<-EOF
 
 -- BIG BOY SHIT -- 
-I'm not removing these because of they are actually important but you are stupid and probably if you use this you'll brick your system.
-(CAREFUL) Check for updates Murkmod
-(CAREFUL) Check for updates MushM
-(Careful) Emergency Revert & Re-Enroll
+(1) Check for updates Murkmod
+(2) Check for updates MushM
+(3) Emergency Revert & Re-Enroll
 EOF
         
         swallow_stdin
         read -r -p "> (1-28): " choice
         case "$choice" in
-        1) runjob doas bash ;;
-        2) runjob doas "cd /home/chronos; sudo -i -u chronos" ;;
-        3) runjob /usr/bin/crosh.old ;;
-        4) runjob show_plugins ;;
-        5) runjob install_plugins ;;
-        6) runjob uninstall_plugins ;;
-        7) runjob powerwash ;;
-        8) runjob revert ;;
-        9) runjob softdisableext ;;
-        10) runjob harddisableext ;;
-        11) runjob hardenableext ;;
-        12) runjob autodisableexts ;;
-        13) runjob edit_pollen ;;
-        14) runjob install_crouton ;;
-        15) runjob run_crouton ;;
-        16) runjob enable_dev_boot_usb ;;
-        17) runjob disable_dev_boot_usb ;;
-        18) runjob set_passwd ;;
-        19) runjob remove_passwd ;;
-        20) runjob reboot ;;
-        21) runjob attempt_dev_install ;;
-        22) runjob attempt_chromeos_update ;;
-        23) runjob attempt_backup_update ;;
-        24) runjob attempt_restore_backup_backup ;;
-        25) runjob attempt_chromebrew_install ;;
-        26) runjob run_firmware_util ;;
-        27) runjob do_updates && exit 0 ;;
-        28) runjob do_mushm_update ;;
-        400) runjob do_dev_updates && exit 0 ;;
-        f) runjob dev_fix ;;
-        29) runjob teter ;;
-        101) runjob hard_disable_nokill ;;
-        111) runjob hard_enable_nokill ;;
-        112) runjob ext_purge ;;
-        113) runjob list_plugins ;;
-        114) runjob install_plugin_legacy ;;
-        115) runjob uninstall_plugin_legacy ;;
-        201) runjob api_read_file ;;
-        202) runjob api_write_file ;;
-        203) runjob api_append_file ;;
-        204) runjob api_touch_file ;;
-        205) runjob api_create_dir ;;
-        206) runjob api_rm_file ;;
-        207) runjob api_rm_dir ;;
-        208) runjob api_ls_dir ;;
-        209) runjob api_cd ;;
+        
+        1) runjob revert ;;
+        2) runjob do_updates && exit 0 ;;
+        3) runjob do_mushm_update ;;
     
-        *) echo && echo "Invalid option." && echo ;;
+        *) echo && echo "Invalid option nigga." && echo ;;
         esac
     done
 }
@@ -411,7 +368,7 @@ remove_passwd() {
 }
 
 prompt_passwd() {
-  echo "Enter your password:"
+  echo "Enter the password:"
   read -r -p " > " password
   stored_password=$(cat /mnt/stateful_partition/murkmod/mushm_password)
   
@@ -420,7 +377,7 @@ prompt_passwd() {
     return
   else
     echo "Incorrect password."
-    read -r -p "Press enter to continue." throwaway
+    read -r -p "Press enter to go back to tarded mode bruv." throwaway
   fi
 }
 
