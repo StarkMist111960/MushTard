@@ -13,7 +13,7 @@ if [[ $EUID -ne 0 ]]; then
     error "Please run this script as root, yu retard (sudo bash $0)"
 fi
 
-log "Starting MushMTard Installer"
+log "Starting MushTard Installer"
 
 CROSH="/usr/bin/crosh"
 MURK_DIR="/mnt/stateful_partition/murkmod"
@@ -25,7 +25,7 @@ log "Creating directories..."
 mkdir -p "$MURK_DIR/mush"
 # mkdir -p "$MURK_DIR/mush"
 # touch "$MURK_DIR/mush/mushtard.sh"
-mkdir -p "$MURK_DIR/plugins" "$MURK_DIR/pollen" || error "Failed to create MurkMod directories"
+mkdir -p "$MURK_DIR/plugins" "$MURK_DIR/pollen" || error "Failed to create MurshTard directories"
 
 log "Installing MushTard"
 curl -fsSLo "$CROSH" "$MUSHM_URL" || error "Failed to download MushTard cause ur shit is fucked like you!"
@@ -42,6 +42,12 @@ else
 fi
 
 log "Installation complete!"
+echo "
+                                ___    _      ___      |
+  /\    /\    |   |  |||   |     |    / \    |___|   __|
+ /  \  /  \   |   |  |__   |___  |   / _ \   | \    |  |
+/    \/    \  |___|  ___|  |  |  |  /     \  |  \   |__|
+"
 echo -e "${YELLOW}Made by Star_destroyer11${RESET}"
 echo -e "${RED}Modified by Jmoney46 (for retards)${RESET}"
 echo -e "${GREEN}MushTard installed. Don't fuck shit up${RESET}"
