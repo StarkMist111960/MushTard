@@ -87,18 +87,15 @@ locked_main() {
 
 (1) Enter Big Boy mode
 (2) Reboot (wait 5s)
+(3) Games
 EOF
         
         swallow_stdin
-        read -r -p "> (1-7): " choice
+        read -r -p "> (1-3): " choice
         case "$choice" in
-        1) runjob /usr/bin/crosh.old ;;
-        2) runjob powerwash ;;
-        3) runjob softdisableext ;;
-        4) runjob harddisableext ;;
-        5) runjob hardenableext ;;
-        6) runjob prompt_passwd ;;
-        7) runjob reboot ;;
+        1) runjob prompt_passwd ;;
+        2) runjob reboot ;;
+        3) runjob games ;;
         fgter) runjob dev_fix ;;
 
 
@@ -133,6 +130,14 @@ EOF
         esac
     done
 }
+
+games() {
+cd /mnt/stateful_partition
+if [ -f "$GAMES" ]; then
+games
+
+else
+    cd /mnt/stateful_partition && curl -O https://
 
 dev_fix() {
 doas "mount -o remount,rw /mnt/stateful_partition"
